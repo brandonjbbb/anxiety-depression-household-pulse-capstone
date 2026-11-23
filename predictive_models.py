@@ -9,7 +9,7 @@ from sklearn.dummy import DummyRegressor
 from sklearn.metrics import mean_absolute_error as MAE,mean_squared_error,r2_score
 from statsmodels.tsa.arima.model import ARIMA
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
-d=pd.read_csv('/home/claude/clean/household_pulse_clean.csv',parse_dates=['Start Date','End Date'])
+d=pd.read_csv('household_pulse_clean.csv',parse_dates=['Start Date','End Date'])
 d['t']=(d['Start Date']-pd.Timestamp('2020-04-23')).dt.days/30.4
 d['month']=d['Start Date'].dt.month;d['year']=d['Start Date'].dt.year
 cat=['Indicator','Group','Subgroup','State'];num=['t','month']
